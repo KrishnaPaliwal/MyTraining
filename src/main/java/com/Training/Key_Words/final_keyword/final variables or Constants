@@ -1,0 +1,20 @@
+Constants or final variables :
+
+The static modifier, in combination with the final modifier, is also used to define
+constants. The final modifier indicates that the value of this field cannot change.
+
+For example, the following variable declaration defines a constant named PI, whose
+value is an approximation of pi (the ratio of the circumference of a circle to its diameter):
+
+static final double PI = 3.141592653589793;
+
+Constants defined in this way cannot be reassigned, and it is a compile-time error
+if your program tries to do so. By convention, the names of constant values are spelled
+in uppercase letters. If the name is composed of more than one word, the words are separated
+by an underscore (_).
+
+Note: If a primitive type or a string is defined as a constant and the value is known at
+compile time, the compiler replaces the constant name everywhere in the code with its value.
+This is called a compile-time constant. If the value of the constant in the outside world 
+changes (for example, if it is legislated that pi actually should be 3.975), you will need 
+to recompile any classes that use this constant to get the current value. 

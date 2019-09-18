@@ -1,0 +1,44 @@
+Wrapper Classes:
+
+Each of Java's eight primitive data types has a class dedicated to it. These are known as
+wrapper classes, because they "wrap" the primitive data type into an object of that class. So,
+there is an Integer class that holds an int variable, there is a Double class that holds a
+double variable, and so on.
+
+The wrapper classes are part of the java.lang package, which is imported by default into 
+all Java programs.
+
+The following two statements illustrate the difference between a primitive data type and an object
+of a wrapper class:
+	int x = 25;
+	Integer y = new Integer(33)
+	
+Clearly x and y differ by more than their values: x is a variable that holds a value;y is an object
+variable that holds a reference to an object.
+
+As noted earlier, data fields in objects are not, in general, directly accessible. 
+So, the following statement using x and y as declared above is NOT allowed:
+	
+	int z = x + y; // wrong!
+	
+The data field in an Integer object is only accessible using the methods of the Integer class. 
+One such method — the intValue() method — returns an int equal to the value of the object,
+effectively "unwrapping" the Integer object:
+
+	int z = x + y.intValue(); // OK!
+	
+Below table shows the primitive types and their wrapper classes in java.
+
+Primitive type 		Wrapper class 		Constructor Arguments 
+byte				 Byte 				byte or String 
+short 				Short 				short or String 
+int					 Integer 			int or String 
+long				 Long 				long or String 
+float 				Float 				float, double or String 
+double				 Double 			double or String 
+char				 Character 			char 
+boolean				 Boolean			boolean or String 
+
+Primitive types can’t be null but wrapper classes can be null.
+
+	

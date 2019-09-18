@@ -1,0 +1,131 @@
+Most common interview questions are “How HashMap works in java”, “How get and put method of HashMap work internally”.
+ Here I am trying to explain internal functionality with an easy example. Rather than going through theory,
+  we will start with example first, so that you will get better understanding and then we will see how get and put function 
+  work in java.
+ 
+ Lets take a very simple example. I have a Country class, we are going to use Country class object as key and its 
+ capital name(string) as value. Below example will help you to understand, how these key value pair will be stored
+  in hashmap.
+ 
+ Now put debug point at line 23 OF HashMapStructure class and right click on project->debug as-> java application.
+  Program will stop execution at line 23 then right click on countryCapitalMap then select watch.
+  You will be able to see structure as below.
+ 
+ Now From HashMapStructure1 diagram, you can observe following points
+1.There is an Entry[] array called table which has size 16.
+2.This table stores Entry class’s object. HashMap class has a inner class called Entry.
+This Entry have key value as instance variable. Lets see structure of entry class Entry Structure.
+ 
+ 3.Whenever we try to put any key value pair in hashmap, Entry class object is instantiated for key value 
+ and that object will be stored in above mentioned Entry[](table). Now you must be wondering, where will 
+ above created Enrty object get stored(exact position in table). The answer  is, hash code is calculated for
+  a key by calling Hascode() method. This hashcode is used to calculate index for above Entry[] table.
+4.Now, If you see at array index 10 in above diagram, It has an Entry object named HashMap$Entry.
+5.We have put 4 key-values in hashmap but it seems to have only 2!!!!This is because if two objects
+ have same hashcode, they will be stored at same index. Now question arises how? It stores objects in a form of LinkedList(logically).
+
+So how hashcode of above country key-value pairs are calculated.
+
+1 Hashcode for Japan = 95 as its length is odd. 
+
+2 Hashcode for India =95 as its length is odd 
+
+3 HashCode for Russia=31 as its length is even. 
+
+4 HashCode for France=31 as its length is even. 
+
+HashMapStructure2 diagram will explain LinkedList concept clearly.
+
+/**
+  * Associates the specified value with the specified key in this map. If the
+  * map previously contained a mapping for the key, the old value is
+  * replaced.
+  *
+  * @param key
+  *            key with which the specified value is to be associated
+  * @param value
+  *            value to be associated with the specified key
+  * @return the previous value associated with <tt>key</tt>, or <tt>null</tt>
+  *         if there was no mapping for <tt>key</tt>. (A <tt>null</tt> return
+  *         can also indicate that the map previously associated
+  *         <tt>null</tt> with <tt>key</tt>.)
+  */
+ public V put(K key, V value) {
+  if (key == null)
+   return putForNullKey(value);
+  int hash = hash(key.hashCode());
+  int i = indexFor(hash, table.length);
+  for (Entry<k , V> e = table[i]; e != null; e = e.next) {
+   Object k;
+   if (e.hash == hash && ((k = e.key) == key || key.equals(k))) {
+    V oldValue = e.value;
+    e.value = value;
+    e.recordAccess(this);
+    return oldValue;
+   }
+  }
+
+  modCount++;
+  addEntry(hash, key, value, i);
+  return null;
+ }
+
+now lets understand above code step by step
+1.Key object is checked for null. If key is null then it will be stored at table[0] because hashcode for null is always 0.
+2.Key object’s hashcode() method is called and hash code is calculated. This hashcode is used to find index of array for storing Entry object. It may happen sometimes that, this hashcode function is poorly written so JDK designer has put another function called hash() which takes above calculated hash value as argument.If you want to learn more about hash() function, you can refer hash and indexFor method in hashmap.
+3.indexFor(hash,table.length)  is used to calculate exact index in table array for storing the Entry object.
+4.As we have seen in our example, if two key objects have same hashcode(which is known as collision) then it will be stored in form of linkedlist.So here, we will iterate through our linkedlist.
+•If there is no element present at that index which we have just calculated then it will directly put our Entry object at that index.
+•If There is element present at that index then it will iterate until it gets Entry->next as null.Then current Entry object become next node in that linkedlist
+•What if we are putting same key again, logically it should replace old value. Yes,it will do that.While iterating it will check key equality by calling equals() method(key.equals(k)), if this method returns true then it replaces value object with current Entry’s value object.
+
+/**
+  * Returns the value to which the specified key is mapped, or {@code null}
+  * if this map contains no mapping for the key.
+  *
+  * <p>
+  * More formally, if this map contains a mapping from a key {@code k} to a
+  * value {@code v} such that {@code (key==null ? k==null :
+  * key.equals(k))}, then this method returns {@code v}; otherwise it returns
+  * {@code null}. (There can be at most one such mapping.)
+  *
+  * </p><p>
+  * A return value of {@code null} does not <i>necessarily</i> indicate that
+  * the map contains no mapping for the key; it's also possible that the map
+  * explicitly maps the key to {@code null}. The {@link #containsKey
+  * containsKey} operation may be used to distinguish these two cases.
+  *
+  * @see #put(Object, Object)
+  */
+ public V get(Object key) {
+  if (key == null)
+   return getForNullKey();
+  int hash = hash(key.hashCode());
+  for (Entry<k , V> e = table[indexFor(hash, table.length)]; e != null; e = e.next) {
+   Object k;
+   if (e.hash == hash && ((k = e.key) == key || key.equals(k)))
+    return e.value;
+  }
+  return null;
+ }
+
+As you got the understanding on put functionality of hashmap. So to understand get functionality is quite simple. 
+If you pass any key to get value object from hashmap.
+1.Key object is checked for null. If key is null then value of Object resides at table[0] will be returned.
+2.Key object’s hashcode() method is called and hash code is calculated.
+3.indexFor(hash,table.length)  is used to calculate exact index in table array using generated hashcode for getting the
+ Entry object.
+4.After getting index in table array, it will iterate through linkedlist and 
+check for key equality by calling equals() method and if it returns true then it returns the value of 
+Entry object else returns null.
+
+Key points to Remember:
+•HashMap has a inner class called Entry which stores key-value pairs.
+•Above Entry object is stored in Entry[ ](Array) called table
+•An index of table is logically known as bucket and it stores first element of linkedlist
+•Key object’s hashcode() is used to find bucket of that Entry object.
+•If two key object ‘s have same hashcode , they will go in same bucket of table array.
+•Key object ‘s equals() method is used to ensure uniqueness of key object.
+•Value object  ‘s equals() and hashcode() method is not used at all
+
+ 

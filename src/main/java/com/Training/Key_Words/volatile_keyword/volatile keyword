@@ -1,0 +1,16 @@
+volatile keyword :::
+
+volatile keyword with variables is to make every thread read the data from memory, 
+not read from thread cache.
+
+volatile has semantics for memory visibility. Basically, the value of a volatile field becomes v
+isible to all readers (other threads in particular) after a write operation completes on it. 
+Without volatile, readers could see some non-updated value.
+
+o answer your question: Yes, I use a volatile variable to control whether some code continues a loop. 
+The loop tests the volatile value and continues if it is true. The condition can be set to false by calling 
+a "stop" method. The loop sees false and terminates when it tests the value after the stop method completes execution
+
+I've used volatile for 'tracking' when to end a loop in a multi-threaded application.
+
+“… the volatile modifier guarantees that any thread that reads a field will see the most recently written value.

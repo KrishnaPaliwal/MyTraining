@@ -1,0 +1,13 @@
+Encapsulation refers to the bundling of data(ie data members of the class) with the methods that operate on that data.
+
+Encapsulation is not information hiding
+
+In Java, you can have encapsulated data that is not hidden at all.
+
+Java classes allow bundling data and methods together:
+
+The language facility that bundles data with the operations that perform on that data is encapsulation.
+Note that encapsulation guarantees neither data protection nor information hiding.
+
+encapsulation does need some degree of information hiding.an object being strongly or weakly encapsulated
+depending on how much of its implementation is hidden.

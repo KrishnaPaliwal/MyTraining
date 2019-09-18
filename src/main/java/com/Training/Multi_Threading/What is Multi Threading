@@ -1,0 +1,189 @@
+Multi Threading :::
+
+Java is amultithreaded programming language which means we can develop multithreaded program using Java
+
+Thread Priorities:
+
+The minimum priority that a thread can have.
+MIN_PRIORITY = 1;
+
+The default priority that is assigned to a thread.
+NORM_PRIORITY = 5;
+
+The maximum priority that a thread can have.
+MAX_PRIORITY = 10;
+
+Java thread status for tools,initialized to indicate thread 'not yet started'
+private volatile int threadStatus = 0;
+
+currentThread() Method : Returns a reference to the currently executing thread object.
+public static native Thread currentThread();
+
+sleep(long millis) Method :: Causes the currently executing thread to sleep (temporarily cease
+							execution) for the specified number of milliseconds.
+							The thread does not lose ownership of any monitors.
+public static native void sleep(long millis) throws InterruptedException;
+
+sleep(long millis, int nanos) Method : Causes the currently executing thread to sleep for the 
+									specified number of milliseconds plus the specified number
+									of nanoseconds.
+public static void sleep(long millis, int nanos) throws InterruptedException
+
+init(ThreadGroup g, Runnable target, String name,long stackSize) Method : Initializes a Thread with the current AccessControlContext
+
+start() Method :: Causes this thread to begin execution; the Java Virtual Machine
+					calls the run() method of this thread.
+public synchronized void start()
+
+private static synchronized long nextThreadID() ::
+
+private void exit() Method :::  This method is called by the system to give a Thread
+								a chance to clean up before it actually exits.
+
+@Deprecated
+public final void stop() : 	This method is depriciated
+
+public void destroy() : This method is depriciated
+
+public final void suspend() : This method is depriciated
+
+public final void resume() : This method is depriciated 
+
+countStackFrames()  : This method is depriciated
+
+
+interrupt() Method :: Interrupts this thread.
+
+
+interrupted() Method :: Tests whether the current thread has been interrupted.
+
+isInterrupted() Method :: Tests whether this thread has been interrupted.
+
+isAlive() Method :: Tests if this thread is alive. A thread is alive if it has
+					been started and has not yet died.					
+
+setPriority() Method :: Changes the priority of this thread.
+
+getPriority() Method :: Returns this thread's priority.
+
+public final void setName(String name) Method :: Changes the name of this thread to be equal to the argument provided.
+
+public final String getName() Method :: Returns this thread's name.
+
+public final ThreadGroup getThreadGroup() Method  :: Returns the thread group to which this thread belongs.
+
+public static int activeCount() Method :: Returns an estimate of the number of active threads in the current
+										thread's and its subgroups.
+
+public static int enumerate(Thread tarray[]) Method :: Copies into the specified array every active thread in the current
+     									thread's thread group and its subgroups.
+
+public final synchronized void join(long millis) Method :: Waits at most {@code millis} milliseconds for this thread to die.
+														A timeout of {@code 0} means to wait forever.
+														
+public final synchronized void join(long millis, int nanos) :: Waits at most  milliseconds plus nanoseconds for this thread to die.
+
+ public final void setDaemon(boolean on) Method ::
+ 
+public final boolean isDaemon() Method ::
+
+public void setContextClassLoader(ClassLoader cl) Method ::
+
+public static native boolean holdsLock(Object obj); Method
+
+public State getState() ::
+
+Back in the old days a computer had a single CPU, and was only capable of executing a single program at a time. Later came multitasking which meant that computers could execute multiple programs (AKA tasks or processes) at the same time. It wasn't really "at the same time" though. The single CPU was shared between the programs. The operating system would switch between the programs running, executing each of them for a little while before switching. 
+
+Along with multitasking came new challenges for software developers. Programs can no longer assume to have all the CPU time available, nor all memory or any other computer resources. A "good citizen" program should release all resources it is no longer using, so other programs can use them. 
+
+Later yet came multithreading which mean that you could have multiple threads of execution inside the same program. A thread of execution can be thought of as a CPU executing the program. When you have multiple threads executing the same program, it is like having multiple CPUs execute within the same program. 
+
+Multithreading can be a great way to increase the performance of some types of programs. However, mulithreading is even more challenging than multitasking. The threads are executing within the same program and are hence reading and writing the same memory simultanously. This can result in errors not seen in a singlethreaded program. Some of these errors may not be seen on single CPU machines, because two threads never really execute "simultanously". Modern computers, though, come with multi core CPUs, and even with multiple CPUs too. This means that separate threads can be executed by separate cores or CPUs simultanously. 
+Multithreading on a multi-CPU computer 
+If a thread reads a memory location while another thread writes to it, what value will the first thread end up reading? The old value? The value written by the second thread? Or a value that is a mix between the two? Or, if two threads are writing to the same memory location simultanously, what value will be left when they are done? The value written by the first thread? The value written by the second thread? Or a mix of the two values written? 
+
+Without proper precautions any of these outcomes are possible. The behaviour would not even be predictable. The outcome could change from time to time. Therefore it is important as a developer to know how to take the right precautions - meaning learning to control how threads access shared resources like memory, files, databases etc. That is one of the topics this Java concurrency tutorial addresses. 
+ 
+Multithreading and Concurrency in Java
+
+Java was one of the first languages to make multithreading easily available to developers. Java had multithreading capabilities from the very beginning. Therefore, Java developers often face the problems described above. That is the reason I am writing this trail on Java concurrency. As notes to myself, and any fellow Java developer whom may benefit from it. 
+
+The trail will primarily be concerned with multithreading in Java, but some of the problems occurring in multithreading are similar to problems occurring in multitasking and in distributed systems. References to multitasking and distributed systems may therefore occur in this trail too. Hence the word "concurrency" rather than "multithreading". 
+ 
+Java Concurrency in 2015 and Forward
+
+A lot has happened in the world of concurrent architecture and design since the first Java concurrency books were written, and even since the Java 5 concurrency utilities were released. 
+
+New, asynchronous "shared-nothing" platforms and APIs like Vert.x and Play / Akka and Qbit have emerged. These platforms use a different concurrency model than the standard Java / JEE concurrency model of threading, shared memory and locking. New non-blocking concurrency algorithms have been published, and new non-blocking tools like the LMax Disrupter have been added to our toolkits. New functional programming parallelism has been introduced with the Fork and Join framework in Java 7, and the collection streams API in Java 8. 
+
+With all these new developments it is about time that I updated this Java Concurrency tutorial. Therefore, this tutorial is once again work in progress. New tutorials will be published whenever time is available to write them. 
+
+
+The reason multithreading is still used in spite of its challenges is that multithreading can have several benefits. Some of these benefits are: 
+
+•Better resource utilization.
+
+
+•Simpler program design in some situations.
+
+
+•More responsive programs.
+
+
+
+
+Better resource utilization
+
+Imagine an application that reads and processes files from the local file system. Lets say that reading af file from disk takes 5 seconds and processing it takes 2 seconds. Processing two files then takes 
+  5 seconds reading file A
+  2 seconds processing file A
+  5 seconds reading file B
+  2 seconds processing file B
+-----------------------
+ 14 seconds total
+
+
+When reading the file from disk most of the CPU time is spent waiting for the disk to read the data. The CPU is pretty much idle during that time. It could be doing something else. By changing the order of the operations, the CPU could be better utilized. Look at this ordering: 
+  5 seconds reading file A
+  5 seconds reading file B + 2 seconds processing file A
+  2 seconds processing file B
+-----------------------
+ 12 seconds total
+
+
+The CPU waits for the first file to be read. Then it starts the read of the second file. While the second file is being read, the CPU processes the first file. Remember, while waiting for the file to be read from disk, the CPU is mostly idle. 
+
+
+
+In general, the CPU can be doing other things while waiting for IO. It doesn't have to be disk IO. It can be network IO as well, or input from a user at the machine. Network and disk IO is often a lot slower than CPU's and memory IO. 
+
+
+Simpler Program Design
+
+If you were to program the above ordering of reading and processing by hand in a singlethreaded application, you would have to keep track of both the read and processing state of each file. Instead you can start two threads that each just reads and processes a single file. Each of these threads will be blocked while waiting for the disk to read its file. While waiting, other threads can use the CPU to process the parts of the file they have already read. The result is, that the disk is kept busy at all times, reading from various files into memory. This results in a better utilization of both the disk and the CPU. It is also easier to program, since each thread only has to keep track of a single file. 
+
+More responsive programs
+
+Another common goal for turning a singlethreaded application into a multithreaded application is to achieve a more responsive application. Imagine a server application that listens on some port for incoming requests. when a request is received, it handles the request and then goes back to listening. The server loop is sketched below: 
+ 
+  while(server is active){
+    listen for request
+    process request
+  }
+
+
+If the request takes a long time to process, no new clients can send requests to the server for that duration. Only while the server is listening can requests be received. 
+
+An alternate design would be for the listening thread to pass the request to a worker thread, and return to listening immediatedly. The worker thread will process the request and send a reply to the client. This design is sketched below: 
+ 
+  while(server is active){
+    listen for request
+    hand request to worker thread
+  }
+
+
+This way the server thread will be back at listening sooner. Thus more clients can send requests to the server. The server has become more responsive. 
+
+The same is true for desktop applications. If you click a button that starts a long task, and the thread executing the task is the thread updating the windows, buttons etc., then the application will appear unresponsive while the task executes. Instead the task can be handed off to a worker thread. While the worker thread is busy with the task, the window thread is free to respond to other user requests. When the worker thread is done it signals the window thread. The window thread can then update the application windows with the result of the task. The program with the worker thread design will appear more responsive to the user. 
+

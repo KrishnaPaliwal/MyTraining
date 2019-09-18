@@ -1,0 +1,36 @@
+super Keyword :::
+
+The super is a reference variable that is used to refer immediate parent class object. 
+
+Whenever you create the instance of subclass, an instance of parent class is 
+created implicitly i.e. referred by super reference variable.
+
+super() is added in each class constructor automatically by compiler.
+
+Accessing Superclass Members:::
+If your method overrides one of its superclass's methods, you can invoke
+the overridden method through the use of the keyword super. You can also 
+use super to refer to a hidden field (although hiding fields is discouraged).
+Consider this class, Superclass:
+
+Exp : super.superClassMethodName(); super.superClassVariableName
+
+Subclass Constructors:::
+
+super is used to call the constructor of parent class if
+it is used inside the body of child(sub) class.
+Invocation of a superclass constructor must be the first line in the subclass constructor.
+	super(); or super(parameter); or super(parameter1, parameter2);
+	based on number of parameter passed it will call parameterize constructor of immediate super class
+
+Note: If a constructor does not explicitly invoke a superclass constructor, the Java compiler
+automatically inserts a call to the no-argument constructor of the superclass. 
+If the super class does not have a no-argument constructor, you will get a compile-time error.
+Object does have such a constructor, so if Object is the only superclass, there is no problem. 
+
+If a subclass constructor invokes a constructor of its superclass, either explicitly
+or implicitly, you might think that there will be a whole chain of constructors called,
+all the way back to the constructor of Object. In fact, this is the case.
+It is called constructor chaining.
+
+public void popAll(Collection<? super E> dst)

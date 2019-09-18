@@ -1,0 +1,32 @@
+Class Methods or static methods:
+
+The Java programming language supports static methods as well as static variables.
+Static methods, which have the static modifier in their declarations, should be
+invoked with the class name, without the need for creating an instance of the 
+class, as in "ClassName.methodName(args)".
+
+Note: You can also refer to static methods with an object reference like
+
+instanceName.methodName(args)
+
+but this is discouraged because it does not make it clear that they are class methods. 
+ 
+A common use for static methods is to access static fields. For example,
+we could add a static method to the Bicycle class to access the numberOfBicycles static field:
+
+public static int getNumberOfBicycles() {
+    return numberOfBicycles;
+}
+ 
+Not all combinations of instance and class variables and methods are allowed:
+
+    Instance methods can access instance variables and instance methods directly.
+    
+    Instance methods can access class variables and class methods directly.
+    
+    Class methods can access class variables and class methods directly.
+    
+    Class methods cannot access instance variables or instance methods directly—they 
+    must use an object reference. Also, class methods cannot use the this keyword as
+    there is no instance for this to refer to.
+ 

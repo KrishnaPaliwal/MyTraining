@@ -1,0 +1,13 @@
+Java System (java.lang.System) Class ::
+
+public final class System extends Object
+
+Java System Class is one of the core classes and I have never seen
+any java developer who doesn’t use it. One of the easiest way to log 
+information for debugging is System.out.print() function.
+
+System class is final so that we can’t subclass and
+override it’s behavior through inheritance.
+
+System class doesn’t provide any public constructors, so we can’t instantiate this class.
+

@@ -1,0 +1,167 @@
+Java Annotations
+
+Annotation is code about the code, that is metadata about the program itself. In other words, organized data about the code, embedded within the 
+code itself. It can be parsed by the compiler, annotation processing tools and can also be made available at run-time too.
+
+We have basic java comments infrastructure using which we add information about the code / logic so that in future, another programmer or the 
+same programmer can understand the code in a better way. Javadoc is an additional step over it, where we add information about the class, 
+methods, variables in the source code. The way we need to add is organized using a syntax. Therefore, we can use a tool and parse those comments and 
+prepare a javadoc document which can be distributed separately.
+
+Javadoc facility gives option for understanding the code in an external way, instead of opening the code the javadoc document
+ can be used separately. IDE benefits using this javadoc as it is able to render information about the code as we develop. Annotations were introduced in JDK 1.5
+Uses of Annotations
+
+Annotations are far more powerful than java comments and javadoc comments. One main difference with annotation is it can be carried over to runtime and 
+the other two stops with compilation level. Annotations are not only comments, it brings in new possibilities in terms of automated processing.
+
+In java we have been passing information to compiler for long. For example take serialization, we have the keyword transient to tell that this 
+field is not serializable. Now instead of having such keywords decorating an attribute annotations provide a generic way of adding information to class/method/field/variable. This is information is meant for programmers, automated tools, java compiler and runtime. Transient is a modifier and annotations are also a kind of modifiers.
+
+
+More than passing information, we can generate code using these annotations. Take webservices where we need to adhere by the service interface contract. 
+The skeleton can be generated using annotations automatically by a annotation parser. This avoids human errors and decreases development time as always with automation.
+
+Frameworks like Hibernate, Spring, Axis make heavy use of annotations. When a language needs to be made popular one of the best thing to do is support development of frameworks based on the language. Annotation is a good step towards that and will help grow Java.
+When Not to Use Annotations
+
+    Do not over use annotation as it will pollute the code.
+    It is better not to try to change the behaviour of objects using annotations. There is sufficient constructs available in oops and annotation is 
+    not a better mechanism to deal with it.
+    We should not what we are parsing. Do not try to over generalize as it may complicate the underlying code. Code is the real program and annotation is meta.
+    Avoid using annotation to specify environment / application / database related information.
+
+Annotation Structure
+
+There are two main components in annotations. First is annotation type and the next is the annotation itself which we use in the code to add meaning. 
+Every annotation belongs to a annotation type.
+
+Annotation Type:
+
+@interface  {
+method declaration;
+}
+
+Annotation type is very similar to an interface with little difference.
+
+    We attach ‘@’ just before interface keyword.
+    Methods will not have parameters.
+    Methods will not have throws clause.
+    Method return types are restricted to primitives, String, Class, enums, annotations, and arrays of the preceding types.
+    We can assign a default value to method.
+
+Meta Annotations
+
+Annotations itself is meta information then what is meta annotations? As you have rightly guessed, it is information about annotation. When we annotate a annotation 
+type then it is called meta annotation. For example, we say that this annotation can be used only for methods.
+
+@Target(ElementType.METHOD)
+public @interface MethodInfo { }
+
+Annotation Types
+
+    Documented
+    When a annotation type is annotated with @Documented then wherever this annotation is used those elements should be documented using Javadoc tool.
+    Inherited
+    This meta annotation denotes that the annotation type can be inherited from super class. When a class is annotated with annotation of type that is annotated with Inherited, then its super class will be queried till a matching annotation is found.
+    Retention
+    This meta annotation denotes the level till which this annotation will be carried. When an annotation type is annotated with meta annotation Retention, RetentionPolicy has three possible values:
+
+    @Retention(RetentionPolicy.RUNTIME)
+    public @interface Developer {
+    	String value();
+    }
+
+        Class
+        When the annotation value is given as ‘class’ then this annotation will be compiled and included in the class file.
+        Runtime
+        The value name itself says, when the retention value is ‘Runtime’ this annotation will be available in JVM at runtime. We can write custom code using reflection package and parse the annotation. I have give an example below.
+        Source
+        This annotation will be removed at compile time and will not be available at compiled class.
+    Target
+    This meta annotation says that this annotation type is applicable for only the element (ElementType) listed. Possible values for ElementType are, CONSTRUCTOR, FIELD, LOCAL_VARIABLE, METHOD, PACKAGE, PARAMETER, TYPE.
+
+    @Target(ElementType.FIELD)
+    public @interface FieldInfo { }
+
+Built-in Java Annotations
+
+@Documented, @Inherited, @Retention and @Target are the four available meta annotations that are built-in with Java.
+
+Apart from these meta annotations we have the following annotations.
+
+@Override
+
+When we want to override a method, we can use this annotation to say to the compiler we are overriding an existing method. If the compiler finds that there is no matching method found in super class then generates a warning. This is not mandatory to use @Override when we override a method. But I have seen Eclipse IDE automatically adding this @Override annotation. Though it is not mandatory, it is considered as a best practice.
+
+@Deprecated
+
+When we want to inform the compiler that a method is deprecated we can use this. So, when a method is annotated with @Deprecated and that method is found used in some place, then the compiler generates a warning.
+
+@SuppressWarnings
+
+This is like saying, “I know what I am doing, so please shut up!” We want the compiler not to raise any warnings and then we use this annotation.
+Custom Annotations
+
+We can create our own annotations and use it. We need to declare a annotation type and then use the respective annotation is java classes.
+
+Following is an example of custom annotation, where this annotation can be used on any element by giving values. Note that I have used @Documented meta-annotation here to say that this annotation should be parsed by javadoc.
+
+/*
+ * Describes the team which wrote the code
+ */
+@Documented
+public @interface Team {
+    int    teamId();
+    String teamName();
+    String teamLead() default "[unassigned]";
+    String writeDate();    default "[unimplemented]";
+}
+
+Annotation for the Above Example Type
+
+... a java class ...
+@Team(
+    teamId       = 73,
+    teamName = "Rambo Mambo",
+    teamLead = "Yo Man",
+    writeDate     = "3/1/2012"
+)
+public static void readCSV(File inputFile) { ... }
+... java class continues ...
+
+Marker Annotations
+
+We know what a marker interface is. Marker annotations are similar to marker interfaces, yes they don’t have methods / elements.
+
+/**
+ * Code annotated by this team is supreme and need
+ * not be unit tested - just for fun!
+ */
+public @interface SuperTeam { }
+
+... a java class ...
+@SuperTeam public static void readCSV(File inputFile) { ... }
+... java class continues ...
+
+In the above see how this annotation is used. It will look like one of the modifiers for this method and also note that the parenthesis () from annotation type is omitted. As there are no elements for this annotation, the parenthesis can be optionally omitted.
+Single Value Annotations
+
+There is a chance that an annotation can have only one element. In such a case that element should be named value.
+
+How to Parse Annotation
+
+We can use reflection package to read annotations. It is useful when we develop tools to automate a certain process based on annotation.
+
+The first main distinction between kinds of annotation is whether they're used at compile time and 
+then discarded (like @Override) or placed in the compiled class file and available at runtime 
+(like Spring's @Component). This is determined by the @Retention policy of the annotation. If you're
+ writing your own annotation, you'd need to decide whether the annotation is helpful at runtime 
+ (for autoconfiguration, perhaps) or only at compile time (for checking or code generation).
+ 
+ When compiling code with annotations, the compiler sees the annotation just like it sees other modifiers
+ on source elements, like access modifiers (public/private) or final. 
+ When it encounters an annotation, it runs an annotation processor, which is like a plug-in class 
+ The annotation processor generally uses the Reflection API to inspect the elements being compiled and may simply run checks on them, 
+ modify them, or generate new code to be compiled. 
+ 

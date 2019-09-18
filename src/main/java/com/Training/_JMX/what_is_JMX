@@ -1,0 +1,126 @@
+http://www.journaldev.com/1352/what-is-jmx-mbean-jconsole-tutorial
+
+What is JMX? 10 mins Quick Start JMX Tutorial (MBean, JConsole)
+JULY 13, 2016 BY PANKAJ 42 COMMENTS
+
+
+Java Management Extensions (JMX) was introduced in J2SE 5.0 release. It provides an architecture to manage resources dynamically at runtime. JMX is used mostly in enterprise applications to make the system configurable or to get the state of application at any point of time.
+
+To manage any resource through JMX, we need to create Managed Beans (MBeans) and then register it to the MBean Server. MBean server works as a management agent for all the MBeans registered.
+
+We use JMX Connectors to connect to MBean server and to manage the registered resources. For example, JDK comes with JConsole through which you can connect to any local or remote MBean server. If you have worked on JBoss server or any enterprise servers, they all comes with JMX Console to monitor and manage MBeans.
+
+
+jmx, mbean, jconsole, jmx tutorial
+
+Here we will learn basics of JMX and how to use JConsole to connect and manage MBeans. Lets start now…
+
+First of all we need to create MBean and for that we need to first create the interface that defines the attributes and operations that we want to expose. The interface name must end with MBean. If you just want to allow read-only, you can leave setter methods.
+
+
+SystemConfigMBean.java
+
+package com.journaldev.jmx;
+
+public interface SystemConfigMBean {
+
+    public void setThreadCount(int noOfThreads);
+    public int getThreadCount();
+    
+    public void setSchemaName(String schemaName);
+    public String getSchemaName();
+    
+    // any method starting with get and set are considered
+    // as attributes getter and setter methods, so I am 
+    // using do* for operation.
+    public String doConfig();
+}
+Next step is to provide the actual implementation of the MBean interface. The JMX Naming convention is to keep the implementation class name as interface name – MBean. So my implementation class will be SystemConfig.
+
+SystemConfig.java
+
+
+package com.journaldev.jmx;
+
+public class SystemConfig implements SystemConfigMBean {
+
+    private int threadCount;
+    private String schemaName;
+    
+    public SystemConfig(int numThreads, String schema){
+        this.threadCount=numThreads;
+        this.schemaName=schema;
+    }
+    
+    @Override
+    public void setThreadCount(int noOfThreads) {
+        this.threadCount=noOfThreads;
+    }
+
+
+    @Override
+    public int getThreadCount() {
+        return this.threadCount;
+    }
+
+
+    @Override
+    public void setSchemaName(String schemaName) {
+        this.schemaName=schemaName;
+    }
+
+
+    @Override
+    public String getSchemaName() {
+        return this.schemaName;
+    }
+    
+    @Override
+    public String doConfig(){
+        return "No of Threads="+this.threadCount+" and DB Schema Name="+this.schemaName;
+    }
+
+}
+Now we need to register our MBean implementation to the MBean server. We can keep any name of our class. After registering MBean, I will keep the thread running until we modify the thread count to 0 through jconsole, that will be the logic to end our application.
+
+
+SystemConfigManagement.java
+
+package com.journaldev.jmx;
+
+import java.lang.management.ManagementFactory;
+
+import javax.management.InstanceAlreadyExistsException;
+import javax.management.MBeanRegistrationException;
+import javax.management.MBeanServer;
+import javax.management.MalformedObjectNameException;
+import javax.management.NotCompliantMBeanException;
+import javax.management.ObjectName;
+
+public class SystemConfigManagement {
+    private static final int DEFAULT_NO_THREADS=10;
+    private static final String DEFAULT_SCHEMA="default";
+
+    public static void main(String[] args) throws MalformedObjectNameException, InterruptedException, InstanceAlreadyExistsException, MBeanRegistrationException, NotCompliantMBeanException {
+        //Get the MBean server
+        MBeanServer mbs = ManagementFactory.getPlatformMBeanServer();
+        //register the MBean
+        SystemConfig mBean = new SystemConfig(DEFAULT_NO_THREADS, DEFAULT_SCHEMA);
+        ObjectName name = new ObjectName("com.journaldev.jmx:type=SystemConfig");
+        mbs.registerMBean(mBean, name);
+        do{
+            Thread.sleep(3000);
+            System.out.println("Thread Count="+mBean.getThreadCount()+":::Schema Name="+mBean.getSchemaName());
+        }while(mBean.getThreadCount() !=0);
+        
+    }
+
+}
+When I run the above program, it registers our MBean implementation to the platform MBean server and keeps on printing following lines on console.
+
+Thread Count=10:::Schema Name=default
+Thread Count=10:::Schema Name=default
+Thread Count=10:::Schema Name=default
+Let’s start JConsole now and check all the options our MBean provides. To start JConsole, all you need to do is open a terminal window and run jconsole command.
+
+JConsole allows to create local connection as well as connection to remote processes, you will be able to see our program name in the list of local processes. Just chose the application and click on Connect button, once connected go to MBean tab and you will see that we can change the value of threadCount and schemaName dynamically and any value changed there will be reflected in console where our application is running. We are also presented with the methods that we can invoke.

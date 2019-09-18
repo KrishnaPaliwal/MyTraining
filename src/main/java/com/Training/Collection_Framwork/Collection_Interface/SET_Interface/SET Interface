@@ -1,0 +1,99 @@
+The Set Interface :::
+
+A Set is a Collection that cannot contain duplicate elements. 
+The Set interface contains only methods inherited from Collection and 
+adds the restriction that duplicate elements are prohibited.
+Set also adds a stronger contract on the behavior of the equals and hashCode operations,
+allowing Set instances to be compared meaningfully even if their implementation types differ.
+
+Two Set instances are equal if they contain the same elements.
+
+The Java platform contains three general-purpose Set implementations: HashSet, TreeSet, and LinkedHashSet.
+
+HashSet, which stores its elements in a hash table, is the best-performing implementation;
+however it makes no guarantees concerning the order of iteration.
+
+TreeSet, which stores its elements in a red-black tree, orders its elements based on their values;
+it is substantially slower than HashSet.
+
+LinkedHashSet, which is implemented as a hash table with a linked list running through it, 
+orders its elements based on the order in which they were inserted into the set (insertion-order).
+
+
+Set Interface Basic Operations :::
+
+The 'size' operation returns the number of elements in the Set (its cardinality).
+
+The 'isEmpty' method does exactly what you think it would.
+
+The 'add' method adds the specified element to the Set if it is not already present
+and returns a boolean indicating whether the element was added.
+
+The 'remove' method removes the specified element from the Set if it is present
+and returns a boolean indicating whether the element was present.
+
+The iterator method returns an Iterator over the Set.
+
+The 'clear' method Removes all of the elements from this set (optional operation). 
+The set will be empty after this call returns.
+
+
+
+Set Interface Bulk Operations :::
+s1.containsAll(s2) — returns true if s2 is a subset of s1. (s2 is a subset of s1
+if set s1 contains all of the elements in s2.)
+
+s1.addAll(s2) — transforms s1 into the union of s1 and s2. 
+
+s1.retainAll(s2) — transforms s1 into the intersection of s1 and s2. 
+(The intersection of two sets is the set containing only the elements common to both sets.)
+
+s1.removeAll(s2) — transforms s1 into the (asymmetric) set difference of s1 and s2.
+(For example, the set difference of s1 minus s2 is the set containing all of the elements found in s1 but not in s2.)
+
+Set Interface Array Operations:::
+The array operations don't do anything special for Sets beyond what they do for any other
+Collection. These operations are described in The Collection Interface section.
+
+The toArray methods are provided as a bridge between collections and older APIs
+that expect arrays on input. The array operations allow the contents of a Collection
+to be translated into an array. The simple form with no arguments creates a new array of Object.
+The more complex form allows the caller to provide an array or to choose the runtime type 
+of the output array.
+
+For example, suppose that c is a Collection. The following snippet dumps the
+contents of c into a newly allocated array of Object whose length is identical
+to the number of elements in c.
+
+Object[] a = c.toArray();
+
+Suppose that c is known to contain only strings (perhaps because c is of
+type Collection<String>). The following snippet dumps the contents of c
+into a newly allocated array of String whose length is identical to the number of elements in c.
+
+String[] a = c.toArray(new String[0]);
+
+Set has 3 general purpose implementations:
+
+- HashSet
+- TreeSet
+- LinkedHashSet
+
+
+HashSet:::
+HashSet does not offer any ordering of elements. So HashSet is not the right choice if you value oriented operations are required.
+HashSet is more faster and the reason is obvious i.e no ordering of elements.
+HashSet implement Cloneable, Collection, Serializable and Set interface.
+Since HashSet implements Cloneable interface, it means that HashSet can use clone() method to make a copy (field to field) of its object. HashSet is also serializable, so it can be saved on disk and then retrieved later for use.
+JobStateReasons and LinkedHashSet are direct subclasses of HashSet.
+
+TreeSet:::
+Treeset implements Cloneable, Collection, Serializable, Set and SortedSet interfaces. This class maintains order of the elements in it according to the natural order of the elements which was missing in the HashSet.
+TreeSet is not synchronized so if a TreeSet is concurrently accessed by threads then thread modifying the contents must be synchronized externally
+
+LinkedHashSet:::
+LinkedHashSet handles collisions by using hash-bucket approach to avoid linear probing and rehashing. It uses doubly-linked list to maintain the insertion order. LinkedHashSet can accept the null entry and it is not synchronized.
+LinkedHashSet implements Cloneable, Collection, Serializable and Set interface. It’s a set to no duplicates are allowed.
+
+
+ 

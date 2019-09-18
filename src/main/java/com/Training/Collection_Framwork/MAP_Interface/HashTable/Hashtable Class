@@ -1,0 +1,22 @@
+Hashtable :::
+
+Java 5 introduced ConcurrentHashMap which is an alternative of Hashtable
+and provides better scalability than Hashtable in Java.
+
+Synchronized means only one thread can modify a hash table at one point of time.
+Basically, it means that any thread before performing an update on a hashtable will have
+to acquire a lock on the object while others will wait for lock to be released.
+
+There are several differences between HashMap and Hashtable in Java:
+
+    Hashtable is synchronized, whereas HashMap is not  HashMap must be externally 
+    synchronized rather than relying on the internal synchronized methods. 
+    This makes HashMap better for non-threaded applications, as unsynchronized Objects 
+    typically perform better than synchronized ones.
+    
+    Hashtable does not allow null keys or values. HashMap allows one null key and any number
+    of null values.
+    
+    One of HashMap's subclasses is LinkedHashMap, so in the event that you'd want
+    predictable iteration order (which is insertion order by default), you could easily
+    swap out the HashMap for a LinkedHashMap. This wouldn't be as easy if you were using Hashtable.

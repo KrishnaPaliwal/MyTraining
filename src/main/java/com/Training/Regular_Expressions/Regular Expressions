@@ -1,0 +1,23 @@
+Regular Expressions :::
+
+A regular expression defines a pattern for a String. Regular Expressions can be
+ used to search, edit or manipulate text. Regular expressions are not language 
+ specific but they differ slightly for each language. Java regular expressions are most similar to Perl.
+ 
+Java Regular Expression classes are present in java.util.regex package that contains
+three classes:
+ 	Pattern, 
+ 	Matcher ,
+ 	PatternSyntaxException.
+ 
+ 1. Pattern object is the compiled version of the regular expression. It doesn’t have
+ any public constructor and we use it’s public static method  "compile" to create the
+ pattern object by passing regular expression argument.
+ 
+ 2. Matcher is the regex engine object that matches the input String pattern with the
+pattern object created. This class doesn’t have any public construtor and we get a 
+Matcher object using pattern object "matcher" method that takes the input String as argument.
+We then use matches method that returns boolean result based on input String matches the  
+regex pattern or not.
+
+3. PatternSyntaxException is thrown if the regular expression syntax is not correct.

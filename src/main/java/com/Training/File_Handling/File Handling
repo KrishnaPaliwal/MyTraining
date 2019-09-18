@@ -1,0 +1,21 @@
+File Handling :::
+
+Java provides several ways to write a file, we can use FileWriter, BufferedWriter, 
+java 7 Files and FileOutputStream to write file in Java.
+
+FileWriter: FileWriter is the simplest way to write a file in java, it provides
+overloaded write method to write int, byte array and String to the File. You can also
+write part of the String or byte array using FileWriter. FileWriter writes directly 
+into Files and should be used only when number of writes are less.
+
+BufferedWriter: BufferedWriter is almost similar to FileWriter but it uses internal
+ buffer to write data into File. So if the number of write operations are more, the 
+ actual IO operations are less and performance is better. You should use BufferedWriter 
+ when number of write operations are more.
+
+FileOutputStream: FileWriter and BufferedWriter are meant to write text to the file 
+but when you need raw stream data to be written into file, you should use FileOutputStream 
+to write file in java.
+
+Files: Java 7 introduced Files utility class and we can write a file using it’s write 
+function, internally it’s using OutputStream to write byte array into file.

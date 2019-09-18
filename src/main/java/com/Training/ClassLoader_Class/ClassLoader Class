@@ -1,0 +1,16 @@
+What is a ClassLoader?
+
+We know that Java Program runs on Java Virtual Machine (JVM). When we compile a Java Class, 
+it transforms it in the form of bytecode that is platform and machine independent compiled
+ program and store it as a .class file. After that when we try to use a Class, 
+ Java ClassLoader loads that class into memory.
+
+There are three types of built-in Class Loaders in Java:
+1.Bootstrap Class Loader – It loads JDK internal classes, 
+typically loads rt.jar and other core classes for example java.lang.* package classes
+
+2.Extensions Class Loader – It loads classes from the JDK extensions directory,
+ usually $JAVA_HOME/lib/ext directory.
+ 
+3.System Class Loader – It loads classes from the current classpath that can
+ be set while invoking a program using -cp or -classpath command line options.

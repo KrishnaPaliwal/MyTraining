@@ -1,0 +1,33 @@
+
+The Vector Class : :  :
+
+public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, Serializable
+
+The Vector class is similar to a traditional Java array,
+except that it can grow as necessary to accommodate new elements.
+Like an array, elements of a Vector object can be accessed via an index into the vector. 
+
+The nice thing about using the Vector class is that you don't have to worry
+about setting it to a specific size upon creation; it shrinks and grows automatically when necessary.
+
+Vector implements a dynamic array. It is similar to ArrayList, but with two differences:
+    1.Vector is synchronized.
+    2.Vector contains many legacy methods that are not part of the collections framework.
+
+Vector proves to be very useful if you don't know the size of the array in advance or you
+just need one that can change sizes over the lifetime of a program.
+
+The Vector class supports four constructors. The first form creates a default vector,
+which has an initial size of 10. 
+Vector()
+
+The second form creates a vector whose initial capacity is specified by size:
+Vector(int size)
+
+The third form creates a vector whose initial capacity is specified by size and
+whose increment is specified by incr. The increment specifies the number of elements
+to allocate each time that a vector is resized upward:
+Vector(int size, int incr)
+
+The fourth form creates a vector that contains the elements of collection c:
+Vector(Collection c)

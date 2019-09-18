@@ -1,0 +1,77 @@
+/**
+ * An ObjectOutputStream writes primitive data types and graphs of Java objects
+ * to an OutputStream.  The objects can be read (reconstituted) using an
+ * ObjectInputStream.  Persistent storage of objects can be accomplished by
+ * using a file for the stream.  If the stream is a network socket stream, the
+ * objects can be reconstituted on another host or in another process.
+ *
+ * <p>Only objects that support the java.io.Serializable interface can be
+ * written to streams.  The class of each serializable object is encoded
+ * including the class name and signature of the class, the values of the
+ * object's fields and arrays, and the closure of any other objects referenced
+ * from the initial objects.
+ *
+ * <p>The method writeObject is used to write an object to the stream.  Any
+ * object, including Strings and arrays, is written with writeObject. Multiple
+ * objects or primitives can be written to the stream.  The objects must be
+ * read back from the corresponding ObjectInputstream with the same types and
+ * in the same order as they were written.
+ *
+ * <p>Primitive data types can also be written to the stream using the
+ * appropriate methods from DataOutput. Strings can also be written using the
+ * writeUTF method.
+ *
+ * <p>The default serialization mechanism for an object writes the class of the
+ * object, the class signature, and the values of all non-transient and
+ * non-static fields.  References to other objects (except in transient or
+ * static fields) cause those objects to be written also. Multiple references
+ * to a single object are encoded using a reference sharing mechanism so that
+ * graphs of objects can be restored to the same shape as when the original was
+ * written.
+ *
+ * <p>For example to write an object that can be read by the example in
+ * ObjectInputStream:
+ * <br>
+ 
+  *     FileOutputStream fos = new FileOutputStream("t.tmp");
+ *      ObjectOutputStream oos = new ObjectOutputStream(fos);
+ *
+ *      oos.writeInt(12345);
+ *      oos.writeObject("Today");
+ *      oos.writeObject(new Date());
+ *
+ *      oos.close();
+ 
+ /**
+ * An ObjectInputStream deserializes primitive data and objects previously
+ * written using an ObjectOutputStream.
+ *
+ * <p>ObjectOutputStream and ObjectInputStream can provide an application with
+ * persistent storage for graphs of objects when used with a FileOutputStream
+ * and FileInputStream respectively.  ObjectInputStream is used to recover
+ * those objects previously serialized. Other uses include passing objects
+ * between hosts using a socket stream or for marshaling and unmarshaling
+ * arguments and parameters in a remote communication system.
+ *
+ * <p>ObjectInputStream ensures that the types of all objects in the graph
+ * created from the stream match the classes present in the Java Virtual
+ * Machine.  Classes are loaded as required using the standard mechanisms.
+ *
+ * <p>Only objects that support the java.io.Serializable or
+ * java.io.Externalizable interface can be read from streams.
+ *
+ * <p>The method <code>readObject</code> is used to read an object from the
+ * stream.  Java's safe casting should be used to get the desired type.  In
+ * Java, strings and arrays are objects and are treated as objects during
+ * serialization. When read they need to be cast to the expected type.
+ *
+ * <p>Primitive data types can be read from the stream using the appropriate
+ * method on DataInput.
+ *
+ * <p>The default deserialization mechanism for objects restores the contents
+ * of each field to the value and type it had when it was written.  Fields
+ * declared as transient or static are ignored by the deserialization process.
+ 
+         	FileInputStream fis = new FileInputStream(filename);
+        	ObjectInputStream in = new ObjectInputStream(fis);
+        	serializedClassObject = (SerialClass)in.readObject();

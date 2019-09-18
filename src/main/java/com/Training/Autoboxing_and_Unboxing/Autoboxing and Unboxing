@@ -1,0 +1,45 @@
+Autoboxing and Unboxing :::
+
+Autoboxing and unboxing is introduced in Java 1.5.
+
+Autoboxing  :::
+Autoboxing is the automatic conversion that the Java compiler makes between
+the primitive types and their corresponding object wrapper classes.
+For example, converting an int to an Integer, a double to a Double, and so on. 
+Converting any primitive type value(an int, for example) an object of the corresponding
+wrapper class (Integer) is called autoboxing.
+The Java compiler applies autoboxing when a primitive value is:
+
+    Passed as a parameter to a method that expects an object of the corresponding wrapper class.
+    Assigned to a variable of the corresponding wrapper class.
+
+Character ch = 'a'; , here ch is instantiated by a not like Character("a");
+
+ Consider the following code:
+
+List<Integer> li = new ArrayList<>();
+for (int i = 1; i < 50; i += 2)
+    li.add(i);
+
+Although you add the int values as primitive types, rather than Integer objects, to li, the code compiles.
+Because li is a list of Integer objects, not a list of int values, you may wonder why the Java compiler 
+does not issue a compile-time error. The compiler does not generate an error because it creates an
+Integer object from i and adds the object to li. Thus, the compiler converts the previous code to the following at runtime:
+
+List<Integer> li = new ArrayList<>();
+for (int i = 1; i < 50; i += 2)
+    li.add(Integer.valueOf(i));
+
+Unboxing :::
+Converting an object of a wrapper type (Integer) to its corresponding primitive (int) value
+is called unboxing. The Java compiler applies unboxing when an object of a wrapper class is:
+
+    Passed as a parameter to a method that expects a value of the corresponding primitive type.
+    Assigned to a variable of the corresponding primitive type.
+
+ 1) Compiler uses valueOf() method to convert primitive to Object and uses intValue(), 
+ doubleValue() etc to get primitive value from Object.
+ 
+ 2)  During autoboxing boolean is converted to Boolean, byte to Byte, char converted
+ to Character, float changes to Float, int goes to Integer, long goes to Long and short
+ converts to Short, while in unboxing opposite happens like Float to float.

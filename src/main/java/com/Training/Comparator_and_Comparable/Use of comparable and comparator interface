@@ -1,0 +1,24 @@
+Use of comparable and comparator interface :::
+
+In java the element in collections can be sorted by using TreeSet or TreeMap.
+To sort the data elements a class needs to implement Comparator or Comparable interface.
+Thats why all Wrapper classes like Integer,Double and String class implements Comparable interface.
+
+A class implementing Comparable interface need to override compareTo(Object obj) method
+and put the logic for sorting.
+
+Couple of things which needs to be taken in consideration:
+1) Collections.sort() will sort only the collection having objects which 
+   implements either one of the comparing interface.
+2) Collections.sort() will sort the same list.
+
+Comparator interface is used when an extra logic is required to sort the objects.
+One need to override compare(Object obj1, Object obj2) method.For example you want
+the list of Person object to be sorted on the basis of complete name i.e "name lastName"
+but also on the other hand doesnt want to change the Person class default sorting implementation 
+or Person class is a jar so so no code modification in it can be done. First create a Custom Comparator.
+
+Couple of things which needs to be taken in consideration:
+1) For Comparator interface you need to override method compare(obj)
+2) In collections.sort() the instance of Comparator need to be passed.
+   In this example the list is sorted according to the custom Comparator created

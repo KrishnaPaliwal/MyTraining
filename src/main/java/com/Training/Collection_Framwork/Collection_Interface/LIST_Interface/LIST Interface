@@ -1,0 +1,72 @@
+The List Interface::
+
+List is an ordered collection of object. Ordered means in a sequence. 
+So use can add item to a list at a certain position(index) and can retrieve
+the item from that very position. Also, duplicates are allowed in a List.
+
+The classes implementing the List interface are: AbstractList, ArrayList, LinkedList, Vector
+
+Vector :
+Vector is a special type of List. It implements List interface where as List interface
+extends from Collection interface. So all the abstract methods of Collection interface are
+available in List interface. 
+
+Stack:
+Stack is a special type of Vector as it extends Vector class. Stack works on 
+last-in-first-out (LIFO) principle. Stack class provides 5 operations to treat
+the vector in a special way.
+	boolean empty()
+	Object peek()
+	Object pop()
+	Object push(Object item)
+	int search(Object o) 
+	
+ArrayList:
+ArrayList is a very useful collection. It also implements the List interface.
+It is almost the same as Vector but the main difference is that it is unsynchronized.
+Which means that multiple threads cannot use this. It is preferred in single threaded environment. 
+Using Vector in single threaded environment is not a wise decision as it is waste of resources. 
+Java treats Vector specially as it is for threaded environment.
+ArrayList also implements Serializable interface which means it can be stored on disk
+and can be retrieved later. 
+ArrayList is implemented as a resizable array. As more elements are added to ArrayList,
+its size is increased dynamically. It's elements can be accessed directly by using the
+get and set methods, since ArrayList is essentially an array. 
+
+LinkedList:
+LinkedList is faster in add and remove, but slower in get. 
+LinkList is another implementation of Collection interface.
+Apart from Collection, it also implements Cloneable, List and Serializable interface.
+Unlike Vector and ArrayList, it doesn’t implement RandomAccess interface. 
+Also LinkedList is not synchronized, so multiple threads cannot access it.
+LinkedList does not use arrays internally to store objects/elements. 
+This has benefits and drawbacks. LinkedList stores elements/objects in nodes.
+Each node stores an object and has a pointer to the next node. So its like a
+chain of nodes. Doubly linked list has two pointers at each node. One points 
+to the next node and the other points to the previous node.
+Since LinkedList does not use array for storage, therefore rendam 
+access to objects is slow. If you want to access object no 777, then you 
+have to go forward one by one or go backward one by one until you reach object no 777.
+LinkedList has a benefit over ArrayList/Vector when it comes to insert and delete operation.
+LinkedLists can add and delete any element in the list very efficiently because only
+the node pointers are to be updated. While talking about the memory consumption,
+each element/object in a LinkedList takes a bit more memory as compared to ArrayList/Vector
+because of the pointers involved.
+LinkedList is implemented as a double linked list. Its performance on add and remove is better
+than Arraylist, but worse on get and set methods. 
+
+AbstractList:
+AbstractList implements Collection and List interfaces. ArrayList, 
+Vector and AbstractSequentialList extends from AbstractList. Actually AbstractList
+contains implementation of List interface for random access.
+
+Vector and ArrayList uses arrays internally to store objects. Which means that getting 
+a specific element will be efficient but adding or removing an element from the start
+or from the middle will be an expensive operation as elements have to be shifted.
+
+LinkedList uses nodes internally to store elements and pointers are used to
+refer to the next node. Insertion and deletion are efficiently done as only
+few pointers are updated whereas, searching element at a particular position is an expensive operation. 
+
+
+	
