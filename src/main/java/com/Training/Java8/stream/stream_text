@@ -1,0 +1,25 @@
+java.uti.stream
+================
+
+A stream represents a sequence of elements.
+
+The stream package was added to traverse collections.
+
+Most stream operations takes Lambda expressions.
+
+Streams operations are either intermediate or terminal
+
+Terminal operations are either void are return a type.
+
+Intermediate operations return the stream itself.
+
+Common operations include map, filter,  forEach, sorted and collect
+
+sorted is intermediate operation
+
+collect is used a terminal operations
+
+Elements in a stream can not be changed.
+
+
+

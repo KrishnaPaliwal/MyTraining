@@ -17,11 +17,19 @@ public class StreamTest {
 		
 		List<Book> books = Arrays.asList(b1, b2, b3); 
 		
+		// Sum all pages in list of Books
 		int allPages = books.stream().collect(Collectors.summingInt(Book::getNoOfPages));
 		
 		int allPPages = books.parallelStream().collect(Collectors.summingInt(Book::getNoOfPages));
 		
 		System.out.println("AllPages: "+allPages);
 		System.out.println("allPPages: "+allPPages);
+		
+		
+		// Create list of AuthorFName 
+		List<String> authorList = books.stream().map(Book::getAuthorFname).collect(Collectors.toList());
+		
+		System.out.println("AuthorList: "+authorList );
 	}
+	
 }
