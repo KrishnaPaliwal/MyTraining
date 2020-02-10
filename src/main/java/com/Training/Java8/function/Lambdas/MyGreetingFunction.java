@@ -14,7 +14,6 @@ public class MyGreetingFunction {
 
     public static void main(String[] args) {
 
-        // Anonymous Inner Class: Runnable
         Runnable r1 = new Runnable() {
             @Override
             public void run() {
@@ -22,27 +21,22 @@ public class MyGreetingFunction {
             }
         };
 
-        // Lambda version of Runnable (no arguments)
         Runnable r2 = () -> System.out.println("run 2");
 
-        // Start both threads
         r1.run();
         r2.run();
         
-        //using an existing functional interface BiFunction         
         BiFunction<String, String, String> concat = (a, b) -> a + b;
         String sentence = concat.apply("Today is ", "a great day");
         System.out.println(sentence);
         
-        //example of the Consumer functional interface
-        Consumer<String> hello = name -> System.out.println("Hello, " + name);
-        for (String name : Arrays.asList("Duke", "Mickey", "Minnie")) {
+        Consumer<String> hello = name -> System.out.println("Welcome "+name);
+        for (String name : Arrays.asList("Krishna", "Prerita", "Meena")) {
             hello.accept(name);
         }
         
-        //example of passing one value 
-         GreetingFunction greeting = message -> System.out.println("Java Programming " + message);
-         greeting.sayMessage("Rocks with lambda expressions");
+         GreetingFunction greeting = message -> System.out.println("Greating message " + message);
+         greeting.sayMessage("Hello");
     }
 }
 

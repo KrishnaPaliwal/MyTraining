@@ -21,5 +21,7 @@ collect is used a terminal operations
 
 Elements in a stream can not be changed.
 
+Java included special stream for some of primitive datatype IntStream, LongStream, DoubleStream
+
 
 
