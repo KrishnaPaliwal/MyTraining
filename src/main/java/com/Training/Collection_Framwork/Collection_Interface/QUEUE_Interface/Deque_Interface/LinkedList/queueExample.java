@@ -1,4 +1,4 @@
-package com.myTraining.Collection_Framwork.Collection_Interface.QUEUE_Interface.Deque_Interface.LinkedList;
+package com.Training.Collection_Framwork.Collection_Interface.QUEUE_Interface.Deque_Interface.LinkedList;
 
 import java.util.LinkedList;
 import java.util.Queue;

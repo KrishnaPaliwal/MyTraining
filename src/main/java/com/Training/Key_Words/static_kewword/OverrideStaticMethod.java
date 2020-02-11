@@ -1,4 +1,4 @@
-package com.myTraining.Key_Words.static_kewword;
+package com.Training.Key_Words.static_kewword;
 
 public class OverrideStaticMethod extends staticMethodClass
 {

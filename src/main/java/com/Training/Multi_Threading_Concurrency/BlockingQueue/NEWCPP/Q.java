@@ -1,4 +1,4 @@
-package com.myTraining.Multi_Threading_Concurrency.BlockingQueue.NEWCPP;
+package com.Training.Multi_Threading_Concurrency.BlockingQueue.NEWCPP;
 
 public class Q {
 	int n; 

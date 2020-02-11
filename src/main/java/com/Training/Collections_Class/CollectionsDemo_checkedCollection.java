@@ -1,4 +1,4 @@
-package com.myTraining.Collections_Class;
+package com.Training.Collections_Class;
 
 import java.util.ArrayList;
 import java.util.Collections;

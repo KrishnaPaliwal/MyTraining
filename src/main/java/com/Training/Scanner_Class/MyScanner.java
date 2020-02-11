@@ -1,4 +1,4 @@
-package com.myTraining.Scanner_Class;
+package com.Training.Scanner_Class;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;

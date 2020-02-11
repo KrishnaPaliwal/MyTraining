@@ -1,4 +1,4 @@
-package com.myTraining.Multi_Threading_Concurrency.BlockingQueue;
+package com.Training.Multi_Threading_Concurrency.BlockingQueue;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;

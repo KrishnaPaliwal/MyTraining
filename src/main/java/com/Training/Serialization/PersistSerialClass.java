@@ -1,4 +1,4 @@
-package com.myTraining.Serialization;
+package com.Training.Serialization;
 
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;

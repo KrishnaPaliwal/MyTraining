@@ -1,4 +1,4 @@
-package com.myTraining.Servlets;
+package com.Training.Servlets;
 
 import java.io.*;
 import javax.servlet.*;

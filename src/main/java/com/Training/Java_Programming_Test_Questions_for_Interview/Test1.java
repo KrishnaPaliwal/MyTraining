@@ -1,4 +1,4 @@
-package com.myTraining.Java_Programming_Test_Questions_for_Interview;
+package com.Training.Java_Programming_Test_Questions_for_Interview;
 
 import java.util.HashSet;
 

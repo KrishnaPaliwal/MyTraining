@@ -1,4 +1,4 @@
-package com.myTraining.General_Program;
+package com.Training.General_Program;
 
 import java.util.ArrayList;
 import java.util.HashSet;

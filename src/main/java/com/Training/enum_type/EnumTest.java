@@ -1,6 +1,6 @@
-package com.myTraining.enum_type;
+package com.Training.enum_type;
 
-import com.myTraining.enum_type.DayEnum;
+import com.Training.enum_type.DayEnum;
 
 public class EnumTest {
     DayEnum day;

@@ -1,4 +1,4 @@
-package com.myTraining.JUnit;
+package com.Training.JUnit;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;

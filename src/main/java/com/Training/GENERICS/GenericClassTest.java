@@ -1,4 +1,4 @@
-package com.myTraining.GENERICS;
+package com.Training.GENERICS;
 
 public class GenericClassTest<T> {
 

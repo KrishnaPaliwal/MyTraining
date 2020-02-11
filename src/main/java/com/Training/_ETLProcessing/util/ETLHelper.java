@@ -1,10 +1,10 @@
-package com.myTraining._ETLProcessing.util;
+package com.Training._ETLProcessing.util;
 
 import java.io.File;
 import java.io.FilenameFilter;
 
-import com.myTraining._ETLProcessing.system.exception.IOETLException;
-import com.myTraining._ETLProcessing.system.exception.NotDirectoryETLException;
+import com.Training._ETLProcessing.system.exception.IOETLException;
+import com.Training._ETLProcessing.system.exception.NotDirectoryETLException;
 /**
  * This is file helper class
  * 

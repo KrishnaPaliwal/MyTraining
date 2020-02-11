@@ -1,4 +1,4 @@
-package com.myTraining.Multi_Threading_Concurrency.BlockingQueue.NEWCPP;
+package com.Training.Multi_Threading_Concurrency.BlockingQueue.NEWCPP;
 
 class Consumer implements Runnable { 
 Q q; 

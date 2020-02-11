@@ -1,5 +1,5 @@
 
-package com.myTraining.General_Program;
+package com.Training.General_Program;
 
 public abstract class BaseClass {
 	

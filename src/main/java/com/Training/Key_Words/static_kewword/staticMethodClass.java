@@ -1,4 +1,4 @@
-package com.myTraining.Key_Words.static_kewword;
+package com.Training.Key_Words.static_kewword;
 //Note : It is possible to invoke static method through
 //the instance (object) of class, but it is bad programming 
 //and compiler will give warning only .

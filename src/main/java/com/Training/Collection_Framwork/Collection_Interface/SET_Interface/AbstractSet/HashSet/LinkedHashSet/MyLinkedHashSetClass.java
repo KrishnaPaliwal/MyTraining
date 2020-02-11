@@ -1,4 +1,4 @@
-package com.myTraining.Collection_Framwork.Collection_Interface.SET_Interface.AbstractSet.HashSet.LinkedHashSet;
+package com.Training.Collection_Framwork.Collection_Interface.SET_Interface.AbstractSet.HashSet.LinkedHashSet;
 
 import java.util.Collections;
 import java.util.Enumeration;

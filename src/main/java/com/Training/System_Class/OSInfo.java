@@ -1,4 +1,4 @@
-package com.myTraining.System_Class;
+package com.Training.System_Class;
 
 
 import java.io.FileInputStream;

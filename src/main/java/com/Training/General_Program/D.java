@@ -1,4 +1,4 @@
-package com.myTraining.General_Program;
+package com.Training.General_Program;
 
 import java.text.DateFormat;
 import java.util.Calendar;

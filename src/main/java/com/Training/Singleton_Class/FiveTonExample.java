@@ -1,4 +1,4 @@
-package com.myTraining.Singleton_Class;
+package com.Training.Singleton_Class;
 
 import java.util.ArrayList;
 import java.util.Collections;

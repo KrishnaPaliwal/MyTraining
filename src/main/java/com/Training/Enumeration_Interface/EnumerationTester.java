@@ -1,4 +1,4 @@
-package com.myTraining.Enumeration_Interface;
+package com.Training.Enumeration_Interface;
 
 import java.util.Enumeration;
 import java.util.Vector;

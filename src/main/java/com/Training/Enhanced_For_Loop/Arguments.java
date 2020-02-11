@@ -1,7 +1,7 @@
-package com.myTraining.Enhanced_For_Loop;
+package com.Training.Enhanced_For_Loop;
 
-import com.myTraining.enum_type.DayEnum;
-import com.myTraining.enum_type.EnumTest;
+import com.Training.enum_type.DayEnum;
+import com.Training.enum_type.EnumTest;
 
 public class Arguments {
 

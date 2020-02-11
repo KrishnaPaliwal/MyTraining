@@ -1,4 +1,4 @@
-package com.myTraining.File_Handling;
+package com.Training.File_Handling;
 
 import java.io.File;
 import java.io.FileInputStream;

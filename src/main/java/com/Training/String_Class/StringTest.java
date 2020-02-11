@@ -1,4 +1,4 @@
-package com.myTraining.String_Class;
+package com.Training.String_Class;
 
 public class StringTest {
 	public static void main(String [] args)

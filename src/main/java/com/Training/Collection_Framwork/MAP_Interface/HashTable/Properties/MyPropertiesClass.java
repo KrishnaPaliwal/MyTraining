@@ -1,4 +1,4 @@
-package com.myTraining.Collection_Framwork.MAP_Interface.HashTable.Properties;
+package com.Training.Collection_Framwork.MAP_Interface.HashTable.Properties;
 
 import java.io.IOException;
 import java.io.PrintStream;

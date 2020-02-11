@@ -1,4 +1,4 @@
-package com.myTraining.INNER_CLASSES__Member_Nested_Local_Anonymous;
+package com.Training.INNER_CLASSES__Member_Nested_Local_Anonymous;
 
 /* Java program to demonstrate how to implement static and non-static
 classes in a java program. */

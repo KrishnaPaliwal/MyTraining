@@ -1,4 +1,4 @@
-package com.myTraining._ETLProcessing.trasform;
+package com.Training._ETLProcessing.trasform;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -8,10 +8,10 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import com.myTraining._ETLProcessing.processor.SourceDestForFileETL;
-import com.myTraining._ETLProcessing.system.exception.IOETLException;
-import com.myTraining._ETLProcessing.system.exception.SystemException;
-import com.myTraining._ETLProcessing.util.ETLHelper;
+import com.Training._ETLProcessing.processor.SourceDestForFileETL;
+import com.Training._ETLProcessing.system.exception.IOETLException;
+import com.Training._ETLProcessing.system.exception.SystemException;
+import com.Training._ETLProcessing.util.ETLHelper;
 
 /**
  * This class is used to transform contents to uppewr case all files from input

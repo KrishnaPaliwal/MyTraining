@@ -1,4 +1,4 @@
-package com.myTraining.Internationalization;
+package com.Training.Internationalization;
 
 import java.io.Externalizable;
 import java.io.Serializable;

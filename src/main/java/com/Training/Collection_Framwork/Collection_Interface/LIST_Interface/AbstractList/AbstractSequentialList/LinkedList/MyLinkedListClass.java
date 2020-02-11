@@ -1,4 +1,4 @@
-package com.myTraining.Collection_Framwork.Collection_Interface.LIST_Interface.AbstractList.AbstractSequentialList.LinkedList;
+package com.Training.Collection_Framwork.Collection_Interface.LIST_Interface.AbstractList.AbstractSequentialList.LinkedList;
 
 import java.util.ArrayList;
 import java.util.Arrays;

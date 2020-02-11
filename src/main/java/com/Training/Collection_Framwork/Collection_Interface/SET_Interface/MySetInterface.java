@@ -1,4 +1,4 @@
-package com.myTraining.Collection_Framwork.Collection_Interface.SET_Interface;
+package com.Training.Collection_Framwork.Collection_Interface.SET_Interface;
 
 
 import java.util.*;

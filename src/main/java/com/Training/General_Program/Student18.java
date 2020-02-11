@@ -1,4 +1,4 @@
-package com.myTraining.General_Program;
+package com.Training.General_Program;
 
 class Student18 {
 int rollno;

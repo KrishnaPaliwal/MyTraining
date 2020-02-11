@@ -1,4 +1,4 @@
-package com.myTraining._ETLProcessing.test;
+package com.Training._ETLProcessing.test;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,12 +6,12 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.myTraining._ETLProcessing.extract.ETLExtractor;
-import com.myTraining._ETLProcessing.processor.ETLProcessor;
-import com.myTraining._ETLProcessing.processor.SourceDestForFileETL;
-import com.myTraining._ETLProcessing.trasform.CapitalWordTransformer;
-import com.myTraining._ETLProcessing.trasform.ITransformer;
-import com.myTraining._ETLProcessing.trasform.WordCounterTransformer;
+import com.Training._ETLProcessing.extract.ETLExtractor;
+import com.Training._ETLProcessing.processor.ETLProcessor;
+import com.Training._ETLProcessing.processor.SourceDestForFileETL;
+import com.Training._ETLProcessing.trasform.CapitalWordTransformer;
+import com.Training._ETLProcessing.trasform.ITransformer;
+import com.Training._ETLProcessing.trasform.WordCounterTransformer;
 
 
 public class ETLProcessingTester {

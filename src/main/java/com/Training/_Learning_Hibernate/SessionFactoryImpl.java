@@ -1,4 +1,4 @@
-package com.myTraining._Learning_Hibernate;
+package com.Training._Learning_Hibernate;
 
 /*
  * Hibernate, Relational Persistence for Idiomatic Java

@@ -1,4 +1,4 @@
-package com.myTraining;
+package com.Training;
 
 import java.util.Arrays;
 import java.util.HashMap;

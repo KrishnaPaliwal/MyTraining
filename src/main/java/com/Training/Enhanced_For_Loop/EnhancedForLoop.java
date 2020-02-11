@@ -1,4 +1,4 @@
-package com.myTraining.Enhanced_For_Loop;
+package com.Training.Enhanced_For_Loop;
 
 public class EnhancedForLoop {
 	

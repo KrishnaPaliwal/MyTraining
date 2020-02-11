@@ -1,4 +1,4 @@
-package com.myTraining._JMX;
+package com.Training._JMX;
 
 public interface SystemConfigMBean {
 

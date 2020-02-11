@@ -1,4 +1,4 @@
-package com.myTraining.Collection_Framwork.MAP_Interface.HashTable;
+package com.Training.Collection_Framwork.MAP_Interface.HashTable;
 
 import java.util.Enumeration;
 import java.util.Hashtable;

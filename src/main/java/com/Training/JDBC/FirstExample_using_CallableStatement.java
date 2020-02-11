@@ -1,4 +1,4 @@
-package com.myTraining.JDBC;
+package com.Training.JDBC;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -33,7 +33,7 @@ public class FirstExample_using_CallableStatement {
 	    
 	   CallableStatement callable = conn.prepareCall("call GetAllProducts()");
 	   callable.registerOutParameter(1, Types.FLOAT);
-	   callable.registerOutParameter(parameterIndex, OracleTyp.);
+	  // callable.registerOutParameter(parameterIndex, OracleTyp.);
 	   System.out.println(callable.getString("first"));
 	   callable.execute();
 

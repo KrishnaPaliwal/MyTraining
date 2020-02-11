@@ -1,4 +1,4 @@
-package com.myTraining.CoreJAVATrainingByAnjali;
+package com.Training.CoreJAVATrainingByAnjali;
 
 class NewThread1 implements Runnable
 {

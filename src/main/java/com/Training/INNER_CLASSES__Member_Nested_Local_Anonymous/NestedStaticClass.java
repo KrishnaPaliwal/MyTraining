@@ -1,4 +1,4 @@
-package com.myTraining.INNER_CLASSES__Member_Nested_Local_Anonymous;
+package com.Training.INNER_CLASSES__Member_Nested_Local_Anonymous;
 
 public class NestedStaticClass {
 

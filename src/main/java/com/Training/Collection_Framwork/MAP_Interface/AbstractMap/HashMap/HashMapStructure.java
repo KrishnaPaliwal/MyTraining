@@ -1,4 +1,4 @@
-package com.myTraining.Collection_Framwork.MAP_Interface.AbstractMap.HashMap;
+package com.Training.Collection_Framwork.MAP_Interface.AbstractMap.HashMap;
 
 import java.util.HashMap;
 import java.util.Iterator;

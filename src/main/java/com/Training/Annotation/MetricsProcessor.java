@@ -1,4 +1,4 @@
-package com.myTraining.Annotation;
+package com.Training.Annotation;
 
 import java.lang.reflect.Method;
 import java.util.Set;
@@ -14,7 +14,7 @@ import javax.tools.Diagnostic;
 
 //http://travisdazell.blogspot.com/2012/10/writing-annotation-based-processor-in.html
 
-@SupportedAnnotationTypes("com.myTraining.Annotation.Metrics")
+@SupportedAnnotationTypes("com.Training.Annotation.Metrics")
 @SupportedSourceVersion(SourceVersion.RELEASE_6)
 public class MetricsProcessor extends AbstractProcessor {
     

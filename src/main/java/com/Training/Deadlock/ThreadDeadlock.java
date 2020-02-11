@@ -1,4 +1,4 @@
-package com.myTraining.Deadlock;
+package com.Training.Deadlock;
 
 public class ThreadDeadlock {
 

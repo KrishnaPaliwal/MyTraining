@@ -1,4 +1,4 @@
-package com.myTraining.ExceptionHandling_try_catch_finally_Throw_Throws;
+package com.Training.ExceptionHandling_try_catch_finally_Throw_Throws;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

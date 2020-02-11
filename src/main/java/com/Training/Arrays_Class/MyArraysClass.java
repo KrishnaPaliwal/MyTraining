@@ -1,4 +1,4 @@
-package com.myTraining.Arrays_Class;
+package com.Training.Arrays_Class;
 
 import java.lang.reflect.Array;
 import java.util.concurrent.DelayQueue;

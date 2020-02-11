@@ -1,4 +1,4 @@
-package com.myTraining.Key_Words.super_keyword;
+package com.Training.Key_Words.super_keyword;
 
 public class MyExceptionClass extends RuntimeException 
 

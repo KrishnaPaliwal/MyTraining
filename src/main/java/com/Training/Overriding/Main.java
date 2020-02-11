@@ -1,4 +1,4 @@
-package com.myTraining.Overriding;
+package com.Training.Overriding;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;

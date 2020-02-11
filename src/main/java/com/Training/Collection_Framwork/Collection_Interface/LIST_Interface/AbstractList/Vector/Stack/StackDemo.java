@@ -1,4 +1,4 @@
-package com.myTraining.Collection_Framwork.Collection_Interface.LIST_Interface.AbstractList.Vector.Stack;
+package com.Training.Collection_Framwork.Collection_Interface.LIST_Interface.AbstractList.Vector.Stack;
 
 import java.util.Enumeration;
 import java.util.Iterator;

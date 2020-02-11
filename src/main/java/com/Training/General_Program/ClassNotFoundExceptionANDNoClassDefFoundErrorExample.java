@@ -1,4 +1,4 @@
-package com.myTraining.General_Program;
+package com.Training.General_Program;
 
 public class ClassNotFoundExceptionANDNoClassDefFoundErrorExample
 	{
@@ -7,7 +7,7 @@ public class ClassNotFoundExceptionANDNoClassDefFoundErrorExample
 	        try
 	        {
 	            Class.forName("oracle.jdbc.driver.OracleDriver"); // java.lang.ClassNotFoundException
-	            // Class.forName("com.myTraining.File_Handling.CreateDirectory"); // It will load
+	            // Class.forName("com.Training.File_Handling.CreateDirectory"); // It will load
 	        }
 	        catch (ClassNotFoundException e)
 	        {

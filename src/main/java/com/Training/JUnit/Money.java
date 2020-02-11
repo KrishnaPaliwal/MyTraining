@@ -1,4 +1,4 @@
-package com.myTraining.JUnit;
+package com.Training.JUnit;
 
 public class Money {
 	private int fAmount; 

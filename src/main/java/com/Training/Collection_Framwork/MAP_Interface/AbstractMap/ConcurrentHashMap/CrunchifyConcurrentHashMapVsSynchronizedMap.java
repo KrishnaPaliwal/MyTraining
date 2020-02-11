@@ -1,4 +1,4 @@
-package com.myTraining.Collection_Framwork.MAP_Interface.AbstractMap.ConcurrentHashMap;
+package com.Training.Collection_Framwork.MAP_Interface.AbstractMap.ConcurrentHashMap;
 
 import java.util.Collections;
 import java.util.HashMap;

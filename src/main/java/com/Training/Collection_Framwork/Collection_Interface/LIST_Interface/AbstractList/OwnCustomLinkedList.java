@@ -1,4 +1,4 @@
-package com.myTraining.Collection_Framwork.Collection_Interface.LIST_Interface.AbstractList;
+package com.Training.Collection_Framwork.Collection_Interface.LIST_Interface.AbstractList;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package com.myTraining.ClassLoader_Class;
+package com.Training.ClassLoader_Class;
 
 public class ClassLoaderTest {
 

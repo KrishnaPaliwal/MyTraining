@@ -1,4 +1,4 @@
-package com.myTraining;
+package com.Training;
 
 public class Xclass {
 

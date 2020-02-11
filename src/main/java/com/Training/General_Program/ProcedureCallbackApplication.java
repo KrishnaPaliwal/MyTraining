@@ -1,4 +1,4 @@
-package com.myTraining.General_Program;
+package com.Training.General_Program;
 
 import java.sql.CallableStatement;
 import java.sql.ResultSet;

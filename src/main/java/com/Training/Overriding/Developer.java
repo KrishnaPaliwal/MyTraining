@@ -1,4 +1,4 @@
-package com.myTraining.Overriding;
+package com.Training.Overriding;
 
 public class Developer extends Employee {
 	

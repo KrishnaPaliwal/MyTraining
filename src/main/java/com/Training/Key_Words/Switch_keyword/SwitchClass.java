@@ -1,4 +1,4 @@
-package com.myTraining.Key_Words.Switch_keyword;
+package com.Training.Key_Words.Switch_keyword;
 
 import java.util.List;
 import java.util.Set;

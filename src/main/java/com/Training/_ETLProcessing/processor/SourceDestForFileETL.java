@@ -1,4 +1,4 @@
-package com.myTraining._ETLProcessing.processor;
+package com.Training._ETLProcessing.processor;
 
 import java.util.Date;
 /**

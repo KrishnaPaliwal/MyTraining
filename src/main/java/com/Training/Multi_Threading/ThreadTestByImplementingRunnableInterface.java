@@ -1,4 +1,4 @@
-package com.myTraining.Multi_Threading;
+package com.Training.Multi_Threading;
 /*
 //MultiTreading by implementing Runnable Interface
 public class ThreadTestByImplementingRunnableInterface {

@@ -1,4 +1,4 @@
-package com.myTraining.Key_Words.volatile_keyword;
+package com.Training.Key_Words.volatile_keyword;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

@@ -1,4 +1,4 @@
-package com.myTraining._ETLProcessing.system.exception;
+package com.Training._ETLProcessing.system.exception;
 
 public class FileNotFoundEtlException extends SystemException{
 

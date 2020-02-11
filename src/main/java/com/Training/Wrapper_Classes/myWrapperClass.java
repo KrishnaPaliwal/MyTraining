@@ -1,4 +1,4 @@
-package com.myTraining.Wrapper_Classes;
+package com.Training.Wrapper_Classes;
 
 public class myWrapperClass {
 	public static void main(String... args)

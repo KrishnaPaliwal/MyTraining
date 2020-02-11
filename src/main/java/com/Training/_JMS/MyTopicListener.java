@@ -1,5 +1,5 @@
 
-package com.myTraining._JMS;
+package com.Training._JMS;
 
 import javax.jms.*;  
 public class MyTopicListener implements MessageListener {  

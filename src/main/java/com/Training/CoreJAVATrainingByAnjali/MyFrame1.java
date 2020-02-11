@@ -1,4 +1,4 @@
-package com.myTraining.CoreJAVATrainingByAnjali;
+package com.Training.CoreJAVATrainingByAnjali;
 
 import java.awt.*;
 import java.awt.event.*;

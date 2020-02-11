@@ -1,4 +1,4 @@
-package com.myTraining.Collections_Class;
+package com.Training.Collections_Class;
 import java.util.*;
 public class CollectionsDemo_max {
 	   public static void main(String args[]) { 

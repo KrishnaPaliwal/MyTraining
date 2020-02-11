@@ -1,6 +1,6 @@
-package com.myTraining._ETLProcessing.trasform;
+package com.Training._ETLProcessing.trasform;
 
-import com.myTraining._ETLProcessing.system.exception.SystemException;
+import com.Training._ETLProcessing.system.exception.SystemException;
 /**
  * 
  * @author krishna

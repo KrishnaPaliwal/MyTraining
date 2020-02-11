@@ -1,12 +1,12 @@
-package com.myTraining._ETLProcessing.processor;
+package com.Training._ETLProcessing.processor;
 
 import java.util.List;
 
-import com.myTraining._ETLProcessing.extract.IExtractor;
-import com.myTraining._ETLProcessing.system.exception.IOETLException;
-import com.myTraining._ETLProcessing.system.exception.NotDirectoryETLException;
-import com.myTraining._ETLProcessing.system.exception.SystemException;
-import com.myTraining._ETLProcessing.trasform.ITransformer;
+import com.Training._ETLProcessing.extract.IExtractor;
+import com.Training._ETLProcessing.system.exception.IOETLException;
+import com.Training._ETLProcessing.system.exception.NotDirectoryETLException;
+import com.Training._ETLProcessing.system.exception.SystemException;
+import com.Training._ETLProcessing.trasform.ITransformer;
 /**
  * This is ETL for file
  * @author krishna

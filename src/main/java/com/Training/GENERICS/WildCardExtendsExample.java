@@ -1,4 +1,4 @@
-package com.myTraining.GENERICS;
+package com.Training.GENERICS;
 
 import java.util.ArrayList;
 import java.util.List;

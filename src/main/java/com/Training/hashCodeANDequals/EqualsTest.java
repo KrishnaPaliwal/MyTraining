@@ -1,4 +1,4 @@
-package com.myTraining.hashCodeANDequals;
+package com.Training.hashCodeANDequals;
 
 public class EqualsTest {
     public static void main(String[] args) {

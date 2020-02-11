@@ -1,4 +1,4 @@
-package com.myTraining;
+package com.Training;
 
 import java.lang.management.ManagementFactory;
 import java.util.Map.Entry;

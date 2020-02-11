@@ -1,4 +1,4 @@
-package com.myTraining.GENERICS;
+package com.Training.GENERICS;
 
 public class testingtt {
 	public static void main(String rr[])

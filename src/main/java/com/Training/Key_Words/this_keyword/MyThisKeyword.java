@@ -1,4 +1,4 @@
-package com.myTraining.Key_Words.this_keyword;
+package com.Training.Key_Words.this_keyword;
 
 class Frog
 {

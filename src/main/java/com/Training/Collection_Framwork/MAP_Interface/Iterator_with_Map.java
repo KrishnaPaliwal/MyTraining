@@ -1,4 +1,4 @@
-package com.myTraining.Collection_Framwork.MAP_Interface;
+package com.Training.Collection_Framwork.MAP_Interface;
 
 import java.util.HashMap;
 import java.util.Iterator;

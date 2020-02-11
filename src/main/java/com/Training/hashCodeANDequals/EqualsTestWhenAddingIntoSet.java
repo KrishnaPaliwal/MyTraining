@@ -1,4 +1,4 @@
-package com.myTraining.hashCodeANDequals;
+package com.Training.hashCodeANDequals;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,4 +1,4 @@
-package com.myTraining._Learning_Hibernate.viaXMLonfig;
+package com.Training._Learning_Hibernate.viaXMLonfig;
 
 public class Product implements java.io.Serializable{
 	 

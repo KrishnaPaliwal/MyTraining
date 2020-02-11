@@ -1,4 +1,4 @@
-package com.myTraining.General_Program;
+package com.Training.General_Program;
 
 //Sequential search or Linear search has a average and worst-case runtime of O(N). 
 public class LinearSearch {

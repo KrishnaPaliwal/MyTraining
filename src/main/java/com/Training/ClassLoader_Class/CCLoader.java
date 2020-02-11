@@ -1,4 +1,4 @@
-package com.myTraining.ClassLoader_Class;
+package com.Training.ClassLoader_Class;
 
 import java.io.DataInputStream;
 import java.io.File;

@@ -1,4 +1,4 @@
-package com.myTraining.General_Program;
+package com.Training.General_Program;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,7 +13,7 @@ public class WaysToCreateObjects {
 		SampleClass obj1 = new SampleClass();
 		
 		// 2nd way Using Class.forName()
-		SampleClass obj2 = (SampleClass) Class.forName("com.myTraining.General_Program.SampleClass").newInstance();
+		SampleClass obj2 = (SampleClass) Class.forName("com.Training.General_Program.SampleClass").newInstance();
 
 		// 3rd way Using clone()
 		SampleClass obj3 = (SampleClass)obj1.clone();

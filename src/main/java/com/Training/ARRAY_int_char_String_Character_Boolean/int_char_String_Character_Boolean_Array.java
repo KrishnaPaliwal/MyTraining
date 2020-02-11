@@ -1,5 +1,5 @@
 
-package com.myTraining.ARRAY_int_char_String_Character_Boolean;
+package com.Training.ARRAY_int_char_String_Character_Boolean;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;

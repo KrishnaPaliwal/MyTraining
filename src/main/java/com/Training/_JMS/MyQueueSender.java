@@ -1,4 +1,4 @@
-package com.myTraining._JMS;
+package com.Training._JMS;
 
 import java.io.BufferedReader;  
 import java.io.InputStreamReader;  

@@ -1,4 +1,4 @@
-package com.myTraining.Constructors;
+package com.Training.Constructors;
 
 public class constructorExample {
 		

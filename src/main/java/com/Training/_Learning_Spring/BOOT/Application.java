@@ -1,4 +1,4 @@
-package com.myTraining._Learning_Spring.BOOT;
+package com.Training._Learning_Spring.BOOT;
 
 @EnableAutoConfiguration // Sprint Boot Auto Configuration
 @ComponentScan(basePackages = "")

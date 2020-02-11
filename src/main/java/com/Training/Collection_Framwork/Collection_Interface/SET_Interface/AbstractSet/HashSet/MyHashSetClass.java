@@ -1,4 +1,4 @@
-package com.myTraining.Collection_Framwork.Collection_Interface.SET_Interface.AbstractSet.HashSet;
+package com.Training.Collection_Framwork.Collection_Interface.SET_Interface.AbstractSet.HashSet;
 
 import java.util.Collections;
 import java.util.Enumeration;

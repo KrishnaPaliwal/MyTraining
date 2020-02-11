@@ -1,6 +1,6 @@
-package com.myTraining._ETLProcessing.extract;
+package com.Training._ETLProcessing.extract;
 
-import com.myTraining._ETLProcessing.system.exception.SystemException;
+import com.Training._ETLProcessing.system.exception.SystemException;
 
 /**
  * Classes which can implement this can extract data

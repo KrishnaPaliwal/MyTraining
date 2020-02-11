@@ -1,6 +1,6 @@
-package com.myTraining.JUnit;
+package com.Training.JUnit;
 
-import com.myTraining.General_Program.TestMap;
+import com.Training.General_Program.TestMap;
 
 import junit.framework.TestCase;
 

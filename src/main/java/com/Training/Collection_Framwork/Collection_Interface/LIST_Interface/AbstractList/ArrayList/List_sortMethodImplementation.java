@@ -1,4 +1,4 @@
-package com.myTraining.Collection_Framwork.Collection_Interface.LIST_Interface.AbstractList.ArrayList;
+package com.Training.Collection_Framwork.Collection_Interface.LIST_Interface.AbstractList.ArrayList;
 
 import java.util.Arrays;
 import java.util.Comparator;

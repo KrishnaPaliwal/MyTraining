@@ -1,12 +1,12 @@
-package com.myTraining._ETLProcessing.extract;
+package com.Training._ETLProcessing.extract;
 
 import java.io.File;
 import java.io.IOException;
 
-import com.myTraining._ETLProcessing.processor.SourceDestForFileETL; 
-import com.myTraining._ETLProcessing.system.exception.IOETLException;
-import com.myTraining._ETLProcessing.system.exception.NotDirectoryETLException;
-import com.myTraining._ETLProcessing.util.ETLHelper;
+import com.Training._ETLProcessing.processor.SourceDestForFileETL; 
+import com.Training._ETLProcessing.system.exception.IOETLException;
+import com.Training._ETLProcessing.system.exception.NotDirectoryETLException;
+import com.Training._ETLProcessing.util.ETLHelper;
 /**
  * This is ETL extractor it extracts files from given input directory
  * @author krishna

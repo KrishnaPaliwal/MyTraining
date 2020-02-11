@@ -1,4 +1,4 @@
-package com.myTraining.BigInteger_Class;
+package com.Training.BigInteger_Class;
 
 import java.math.BigInteger;
 

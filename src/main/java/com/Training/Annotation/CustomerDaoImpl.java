@@ -1,4 +1,4 @@
-package com.myTraining.Annotation;
+package com.Training.Annotation;
 
 @Metrics
 public class CustomerDaoImpl {

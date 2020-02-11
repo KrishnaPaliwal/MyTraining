@@ -1,4 +1,4 @@
-package com.myTraining.GENERICS;
+package com.Training.GENERICS;
 
 public class MaximumTest {
 	   // determines the largest of three Comparable objects

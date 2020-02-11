@@ -1,4 +1,4 @@
-package com.myTraining.Serialization;
+package com.Training.Serialization;
 
 import java.io.Serializable;
 import java.util.Calendar;

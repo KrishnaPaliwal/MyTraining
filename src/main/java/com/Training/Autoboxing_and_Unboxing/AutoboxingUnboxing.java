@@ -1,4 +1,4 @@
-package com.myTraining.Autoboxing_and_Unboxing;
+package com.Training.Autoboxing_and_Unboxing;
 
 import java.util.ArrayList;
 import java.util.List;

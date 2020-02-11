@@ -1,4 +1,4 @@
-package com.myTraining.Key_Words.final_keyword;
+package com.Training.Key_Words.final_keyword;
 
 public class DemoClassofFinalKeyword {
 	

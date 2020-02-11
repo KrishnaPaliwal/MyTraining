@@ -1,4 +1,4 @@
-package com.myTraining.Inheritance;
+package com.Training.Inheritance;
 
 public interface A extends Super{
 

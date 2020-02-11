@@ -1,4 +1,4 @@
-package com.myTraining.DataTypes;
+package com.Training.DataTypes;
 
 public class datatype {
 	

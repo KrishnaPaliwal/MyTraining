@@ -1,4 +1,4 @@
-package com.myTraining.Comparator_and_Comparable;
+package com.Training.Comparator_and_Comparable;
 
 public class EMP implements Comparable<EMP>{
 	

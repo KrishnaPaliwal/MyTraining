@@ -1,4 +1,4 @@
-package com.myTraining.Multi_Threading_Concurrency.ThreadPool;
+package com.Training.Multi_Threading_Concurrency.ThreadPool;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

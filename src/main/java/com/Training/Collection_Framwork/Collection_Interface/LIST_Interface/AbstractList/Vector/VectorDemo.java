@@ -1,4 +1,4 @@
-package com.myTraining.Collection_Framwork.Collection_Interface.LIST_Interface.AbstractList.Vector;
+package com.Training.Collection_Framwork.Collection_Interface.LIST_Interface.AbstractList.Vector;
 
 import java.util.Collections;
 import java.util.Enumeration;

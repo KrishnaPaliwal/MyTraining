@@ -1,4 +1,4 @@
-package com.myTraining.Comparator_and_Comparable;
+package com.Training.Comparator_and_Comparable;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;

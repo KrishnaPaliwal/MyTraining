@@ -1,4 +1,4 @@
-package com.myTraining.BitSet_Class;
+package com.Training.BitSet_Class;
 
 import java.util.BitSet;
 

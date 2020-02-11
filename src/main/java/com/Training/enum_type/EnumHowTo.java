@@ -1,4 +1,4 @@
-package com.myTraining.enum_type;
+package com.Training.enum_type;
 
 public class EnumHowTo {
 	

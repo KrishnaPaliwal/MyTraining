@@ -1,4 +1,4 @@
-package com.myTraining.Annotation;
+package com.Training.Annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

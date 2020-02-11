@@ -1,4 +1,4 @@
-package com.myTraining.Integer_Class;
+package com.Training.Integer_Class;
 
 /*
  * Copyright (c) 1994, 2010, Oracle and/or its affiliates. All rights reserved.

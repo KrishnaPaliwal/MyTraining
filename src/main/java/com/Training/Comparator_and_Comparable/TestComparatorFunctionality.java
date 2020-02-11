@@ -1,10 +1,10 @@
-package com.myTraining.Comparator_and_Comparable;
+package com.Training.Comparator_and_Comparable;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import com.myTraining.Comparator_and_Comparable.Employee.EmployeeSalaryComparator;
+import com.Training.Comparator_and_Comparable.Employee.EmployeeSalaryComparator;
 
 public class TestComparatorFunctionality {
 

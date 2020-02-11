@@ -1,4 +1,4 @@
-package com.myTraining.General_Program;
+package com.Training.General_Program;
 
 	import java.awt.Frame;
 	import java.awt.Label;
@@ -25,6 +25,6 @@ public class AwtExecutableJar {
 Create a manifest.txt file.
 
 manifest.txt:
-Main-Class: com.myTraining.General_Programs.AwtExecutableJar
+Main-Class: com.Training.General_Programs.AwtExecutableJar
 
 */

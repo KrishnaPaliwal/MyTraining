@@ -1,4 +1,4 @@
-package com.myTraining.General_Program;
+package com.Training.General_Program;
 
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -6,8 +6,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import com.myTraining.Collection_Framwork.*;
-import com.myTraining.Collection_Framwork.Collection_Interface.LIST_Interface.AbstractList.AbstractSequentialList.*;
+import com.Training.Collection_Framwork.*;
+import com.Training.Collection_Framwork.Collection_Interface.LIST_Interface.AbstractList.AbstractSequentialList.*;
 
 class A
 {

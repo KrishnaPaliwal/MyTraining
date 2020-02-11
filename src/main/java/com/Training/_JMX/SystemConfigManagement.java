@@ -1,4 +1,4 @@
-package com.myTraining._JMX;
+package com.Training._JMX;
 
 import java.lang.management.ManagementFactory;
 

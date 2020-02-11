@@ -1,6 +1,6 @@
-package com.myTraining.ARRAY_int_char_String_Character_Boolean;
+package com.Training.ARRAY_int_char_String_Character_Boolean;
 
-import com.myTraining.Annotation.Xclass;
+import com.Training.Xclass;
 
 public class XSubClass extends Xclass {
 	
@@ -8,7 +8,6 @@ public class XSubClass extends Xclass {
 	{
 		Xclass obj = new Xclass();
 		
-		obj.i =45;
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.myTraining.String_Class;
+package com.Training.String_Class;
 
 import java.util.Date;
 

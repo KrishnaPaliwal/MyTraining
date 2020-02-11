@@ -1,4 +1,4 @@
-package com.myTraining.Upcasting_and_Downcasting;
+package com.Training.Upcasting_and_Downcasting;
 
 class Machine
 {

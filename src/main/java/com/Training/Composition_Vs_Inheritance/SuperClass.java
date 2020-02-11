@@ -1,4 +1,4 @@
-package com.myTraining.Composition_Vs_Inheritance;
+package com.Training.Composition_Vs_Inheritance;
 
 public abstract class SuperClass 
 {
