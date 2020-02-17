@@ -1,11 +1,12 @@
-package com.Training.Memory_Management_LinkedInCode.EscapingReferences;
+package com.Training.Memory_Management.EscapingReferences;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CustomerRecords {
+public class CustomerMapRecords {
 	private Map<String, Customer> records;
 	
-	public CustomerRecords() {
+	public CustomerMapRecords() {
 		this.records = new HashMap<String, Customer>();
 	}
 	
@@ -14,6 +15,6 @@ public class CustomerRecords {
 	}
 		
 	public Map<String, Customer> getCustomers() {
-		return this.records;
+		return Collections.unmodifiableMap(this.records);
 	}
 }

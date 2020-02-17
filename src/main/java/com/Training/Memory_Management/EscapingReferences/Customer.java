@@ -1,4 +1,4 @@
-package com.Training.Memory_Management_LinkedInCode.EscapingReferences;
+package com.Training.Memory_Management.EscapingReferences;
 
 public class Customer {
 	private String name;

@@ -30,6 +30,7 @@ public class MyLinkedListClass {
 		LLst.add(2,"Mandaur");
 		LLst.add(2,"MP");
 		LLst.add(5,"Madhya Pradesh");
+		LLst.add(6,"Madhya Pradesh");
 		System.out.println(LLst);
 		System.out.println("Sorted");
 		Collections.sort(LLst);

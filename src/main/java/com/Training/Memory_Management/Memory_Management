@@ -1,0 +1,39 @@
+Memory Management :::
+
+Java objects reside in an area called the heap.
+The heap is created when the JVM starts up and may increase or decrease in size while the application runs.
+
+When the heap becomes full, garbage is collected. During the garbage collection objects that are no longer
+used are cleared, thus making space for new objects.
+
+Java methods, thread stacks and native handles are allocated in memory separate from the heap, 
+as well as JVM internal data structures. 
+
+Local variables lives on the stack, and allocated memory at method invocation time, and
+deallocated memory when method execution got over.
+
+Other data lives in on the HEAP and memory is allocated with new, but never explicitly deallocated.
+
+Java uses automatic memory management.
+
+The Java runtime employs a garbage collector that reclaims the memory occupied by an object once 
+it determines that object is no longer accessible.
+
+ 
+Objects that is not freed and continue to consume memory, then this is called 'MEMORY LEAK'.
+
+Any object on the heap which can not be reached through a reference from the stack is "eligible for garbage collection."
+
+It should be noted that garbage collection will temporarily stop all the threads from your application running. 
+While garbage collection takes place your application is temporarily suspended and it will not resume until garbage collection completes.
+
+When a an object is actually garbage collected and by that time when garbage collection
+process physically removes objects from heap, that time java runs its finalize() method.
+
+"Soft leaks" - an object is referenced on stack even though it will never be use again.
+
+General Algorithm Garbage Collectors used is "Mark and Sweep" process. It is 2 stage process, first marking and second sweeping.
+Rather than searching for all the object to remove instead Garbage Collector looks for all the objects to be retained and it rescued  them.
+
+Command to print -XX VM flags and check default Garbage collector used in your machine
+java -XX:+PrintCommandLineFlags
